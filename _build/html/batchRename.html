@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batch Rename &#8212; Batch Render 1.00 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contact" href="contact.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="batch-rename">
+<h1>Batch Rename<a class="headerlink" href="#batch-rename" title="Permalink to this headline">¶</a></h1>
+<p><strong>Batch Rename</strong> is a tool included with <strong>Batch Render</strong> that allows you to <em>suffix and posfix</em> to the name of all the files in the current folder <strong>from the terminal</strong>.</p>
+<p>This can be useful in case you want to add the name of a material to all the maps in the current folder so the material is matched properly by <strong>Batch Render</strong>. And of course, it can also be used for other stuff outside <em>Batch Render</em>.</p>
+<p>To use this tool, from the terminal, you must navigate to the folder where the files you want to modify are located, beware that <strong>this will modify the name of all the files in that folder</strong>, you might want to isolate them in temporary subfolders.</p>
+<div class="section" id="arguments">
+<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>-s</strong>: <em>Adds</em> a <strong>suffix</strong> to all the files</p></li>
+<li><p><strong>-rs</strong>: <em>Removes</em> a <strong>suffix</strong> to all the files</p></li>
+<li><p><strong>-p</strong>: <em>Adds</em> a <strong>posfix</strong> to all the files</p></li>
+<li><p><strong>-rp</strong>: <em>Removes</em> a <strong>posfix</strong> to all the files</p></li>
+</ul>
+<p>For this example, let’s suppose we have 3 files in the current folder:</p>
+<ul class="simple">
+<li><p>baseColor.png</p></li>
+<li><p>roughness.png</p></li>
+<li><p>height.png</p></li>
+</ul>
+<p>Running the command <code class="docutils literal notranslate"><span class="pre">batchRename.py</span> <span class="pre">-s</span> <span class="pre">red_</span></code> <em>(insert suffix red_)</em> will leave us with:</p>
+<ul class="simple">
+<li><p>red_baseColor.png</p></li>
+<li><p>red_roughness.png</p></li>
+<li><p>red_height.png</p></li>
+</ul>
+<p>Running the command <code class="docutils literal notranslate"><span class="pre">batchRename.py</span> <span class="pre">-p</span> <span class="pre">_myObject</span></code> <em>(insert posfix _myObject)</em> will leave us with:</p>
+<ul class="simple">
+<li><p>red_baseColor_myObject.png</p></li>
+<li><p>red_roughness_myObject.png</p></li>
+<li><p>red_height_myObject.png</p></li>
+</ul>
+<p>Running the command <code class="docutils literal notranslate"><span class="pre">batchRename.py</span> <span class="pre">-rs</span> <span class="pre">red_</span></code> <em>(removes suffix red_)</em> will leave us with:</p>
+<ul class="simple">
+<li><p>baseColor_myObject.png</p></li>
+<li><p>roughness_myObject.png</p></li>
+<li><p>height_myObject.png</p></li>
+</ul>
+<p>Running the command <code class="docutils literal notranslate"><span class="pre">batchRename.py</span> <span class="pre">-rp</span> <span class="pre">_myObject</span></code> <em>(removes posfix _myObject)</em> will leave us with:</p>
+<ul class="simple">
+<li><p>baseColor.png</p></li>
+<li><p>roughness.png</p></li>
+<li><p>height.png</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Batch Render</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Batch Rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="usage.html" title="previous chapter">Usage</a></li>
+      <li>Next: <a href="contact.html" title="next chapter">Contact</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Simon Sanchez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/batchRename.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usage &#8212; Batch Render 1.00 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Batch Rename" href="batchRename.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>This section explains how to actually use <strong>Batch Render</strong>.</p>
+<p><strong>Batch Render</strong> is a <em>command line tool</em>, meaning that it’s completely operated via <strong>cmd/terminal</strong>.</p>
+<div class="section" id="basic-rendering">
+<h2>Basic Rendering<a class="headerlink" href="#basic-rendering" title="Permalink to this headline">¶</a></h2>
+<p>To start rendering you must launch your terminal and navigate to the folder where the <strong>.obj</strong> and <strong>.fbx</strong> files that you want to render are located.</p>
+<p>On <em>Windows</em>, you can open the folder from the explorer and in the address of the folder you can type ‘<strong>cmd</strong>’ and launch the terminal directly in that folder.</p>
+<p>Once you’re in that folder from within the terminal you can run the following command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">batchCall.py</span></code></p>
+<p>This will <strong>prompt you</strong> to select a <strong>preset</strong> for rendering. Each preset has a <em>number associated</em>, you must enter that number and press enter to use that preset for rendering.</p>
+<p><strong>Batch Render is recursive</strong>, meaning that <em>it will render all files in the current folder and in all the subfolders</em>.</p>
+<div class="section" id="what-are-presets">
+<h3>What are presets?<a class="headerlink" href="#what-are-presets" title="Permalink to this headline">¶</a></h3>
+<p><strong>Presets are simply .blend files</strong> that you can customize to your liking, the renderer will use the <em>selected preset</em> to render with. These presets can include HDR maps, lighting setups, etc…</p>
+<p>The render engine and the render properties that Batch Render will use depend on the preset and must be configured from withing <strong>Blender</strong> itself.</p>
+<p>Presets are located in the <strong>RenderPresets</strong> folder, <em>this folder must not be deleted</em>.</p>
+</div>
+<div class="section" id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+<p>Once you select a preset, you will be able to configure the settings you want for the current batch.</p>
+<ul>
+<li><p><strong>Render turntable</strong>: If you say yes to this setting, the renderer will render a turntable for each object</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Turntable frames</strong>: This settings indicates how many frames will make up the turntable</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Render 42 angles</strong>: This setting won’t show up when rendering a turntable, the setting indicates if 42 angles per object must be rendered, if not, 12 angles will be rendered</p></li>
+<li><p><strong>Render width and height</strong>: Setting determines the dimensions of the render in pixels</p></li>
+<li><p><strong>Camera push in X</strong>: Offsep of the camera in the X axis, it’s suggested to use 0 unless you’re rendering a turntable</p></li>
+<li><p><strong>Camera push in Z</strong>: Offset of the camera in the Z axis, it’s not suggested for it to be 0, as part of the rendered object might end up outside of the camera’s vision</p></li>
+<li><p><strong>Displacement intensity</strong>: Defines the strength of the displacement map (height map), this setting is only relevant if the preset selected uses Cycles as it’s render engine, and if a height map is present.</p></li>
+<li><p><strong>Emission intensity</strong>: Defines the strength of the emissive map, only relevant if an emissive map is present.</p></li>
+<li><p><strong>Texture tile</strong>: Defines how many times all maps will be tiled in the X, Y and Z axis, options is mostly relevant when rendering UV Spheres with materials to avoid stretching.</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-cancel">
+<h3>How to cancel?<a class="headerlink" href="#how-to-cancel" title="Permalink to this headline">¶</a></h3>
+<p>If you need to interrupt the program, you can press <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> or <code class="docutils literal notranslate"><span class="pre">Command+.</span></code> inside the terminal. You might need to do it multiple times until the execution stops.</p>
+</div>
+<div class="section" id="material-matching">
+<h3>Material Matching<a class="headerlink" href="#material-matching" title="Permalink to this headline">¶</a></h3>
+<p><strong>Batch Render</strong> will automatically try to <em>create the materials for each object</em>. However, some <strong>requirements</strong> must be met.</p>
+<p>Each <strong>.obj</strong> or <strong>.fbx</strong> should have a folder named ‘<em>textures</em>’, inside this folder all the different maps for each material in the object should be located.</p>
+<p>The <strong>material matching depends on the name of each material</strong>, for example, let’s suppose we have an object with two materials:</p>
+<ol class="arabic simple">
+<li><p><strong>Red</strong></p></li>
+<li><p><strong>Green</strong></p></li>
+</ol>
+<p>Inside the ‘<em>textures</em>’ folder we have the following maps:</p>
+<ul class="simple">
+<li><p>object_red_BaseColor.png</p></li>
+<li><p>object_red_Metallic.png</p></li>
+<li><p>object_red_Roughness.png</p></li>
+<li><p>object_red_Normal.png</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>object_green_BaseColor.png</p></li>
+<li><p>object_green_Metallic.png</p></li>
+<li><p>object_green_Roughness.png</p></li>
+<li><p>object_green_Normal.png</p></li>
+</ul>
+<p>In this example, all the maps that contains the word ‘<strong>red</strong>’ will be assigned to the <strong>Red</strong> material, same goes for ‘<strong>green</strong>’. <em>Casing in this case doesn’t matter</em>, if the material is named <strong>Red.001</strong> it will also be properly matched.</p>
+<p>Each type of map will be assigned to the material depending on their names, here are the terms for each map:</p>
+<ul class="simple">
+<li><p><strong>Base Color</strong>: <em>diffuse, diff, albedo, base, col, color, basecolor</em></p></li>
+<li><p><strong>Metallic</strong>: <em>metallic, metalness, metal, mtl</em></p></li>
+<li><p><strong>Roughness</strong>: <em>roughness, rough, rgh</em></p></li>
+<li><p><strong>Normal Map</strong>: <em>normal, nor, nrm, nrml, norm</em></p></li>
+<li><p><strong>Height</strong>: <em>height, displacement, displace, disp, dsp, heightmap</em></p></li>
+<li><p><strong>Emissive</strong>: <em>emissive, emission, emiss</em></p></li>
+</ul>
+<p>If any of these terms are <strong>part of</strong> the name of a map, it will be used as such, <em>the terms are case insensitive</em>.</p>
+<p><em>A tool called batchRename is included to quickly suffix and posfix text to files names for proper matching, this tool is discussed in it’s own section.</em></p>
+<div class="section" id="turntable-generation">
+<h4>Turntable Generation<a class="headerlink" href="#turntable-generation" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>turntable option</strong> allows to quickly create a turntable for the objects, the <strong>interpolation is linear</strong>, meaning that <em>it will loop seamlessly</em>.</p>
+<p>You can <strong>define how many frames you want for the turntable</strong>. Each frame will be individually rendered as a <strong>.png</strong> image inside the ‘<strong>turntable</strong>’ folder which will be inside the folder with the name of the preset chosen to render.</p>
+<p><em>Pushing the camera in the X and Z axis is recommended, as the camera’s default position is in the center of the object/scene.</em></p>
+<p>These frames <strong>can be converted into a video</strong> with many video editing software, as well as within <strong>Blender</strong>.</p>
+</div>
+<div class="section" id="preset-creation">
+<h4>Preset Creation<a class="headerlink" href="#preset-creation" title="Permalink to this headline">¶</a></h4>
+<p>The creation of rendering presets is <strong>extremely simple</strong>, you just need to open <strong>Blender</strong>, create your own render setup (with lights, hdr, emissive planes, etc…) and save the <strong>.blend</strong> file inside the <strong>RenderPresets</strong> folder.</p>
+<p>The newly create preset will appear in the preset selection list, ready to be used.</p>
+<p><strong>Batch Render</strong> will use the settings from the <strong>.blend</strong> file to render, except some that are overriden (<em>such as the width and height of the render.</em>) These settings include things such as the render samples, the transparent background, the render engine to be used, and so on.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Batch Render</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batchRename.html">Batch Rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="batchRename.html" title="next chapter">Batch Rename</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Simon Sanchez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/usage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
