@@ -1,6 +1,10 @@
 Usage
 ============
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/WJnKKgSqY08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This section explains how to actually use **Batch Render**.
 
 **Batch Render** is a *command line tool*, meaning that it's completely operated via **cmd/terminal**.
@@ -43,9 +47,9 @@ Once you select a preset, you will be able to configure the settings you want fo
 * **Render width and height**: Setting determines the dimensions of the render in pixels
 * **Camera push in X**: Offsep of the camera in the X axis, it's suggested to use 0 unless you're rendering a turntable
 * **Camera push in Z**: Offset of the camera in the Z axis, it's not suggested for it to be 0, as part of the rendered object might end up outside of the camera's vision
-* **Displacement intensity**: Defines the strength of the displacement map (height map), this setting is only relevant if the preset selected uses Cycles as it's render engine, and if a height map is present.
-* **Emission intensity**: Defines the strength of the emissive map, only relevant if an emissive map is present.
-* **Texture tile**: Defines how many times all maps will be tiled in the X, Y and Z axis, options is mostly relevant when rendering UV Spheres with materials to avoid stretching.
+* **Displacement intensity**: Defines the strength of the displacement map (height map), this setting is only relevant if the preset selected uses Cycles as it's render engine, and if a height map is present
+* **Emission intensity**: Defines the strength of the emissive map, only relevant if an emissive map is present
+* **Texture tile**: Defines how many times all maps will be tiled in the X, Y and Z axis, options is mostly relevant when rendering UV Spheres with materials to avoid stretching
 
 How to cancel?
 ^^^^^^^^^^^^^^
@@ -55,7 +59,7 @@ If you need to interrupt the program, you can press ``Ctrl+C`` or ``Command+.`` 
 Material Matching
 ^^^^^^^^^^^^^^^^^
 
-**Batch Render** will automatically try to *create the materials for each object*. However, some **requirements** must be met.
+**Batch Render** will automatically try to *assign the material maps to each material*. However, some **requirements** must be met.
 
 Each **.obj** or **.fbx** should have a folder named '*textures*', inside this folder all the different maps for each material in the object should be located.
 

@@ -1,6 +1,10 @@
 Usage
 ============
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/WJnKKgSqY08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This section explains how to actually use **Batch Render**.
 
 **Batch Render** is a *command line tool*, meaning that it's completely operated via **cmd/terminal**.

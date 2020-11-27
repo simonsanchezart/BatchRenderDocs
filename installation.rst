@@ -1,6 +1,10 @@
 Installation
 ============
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZGsAjrS9d4w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This section details instructions to install **Batch Render** in your computer, the tutorial is focused on *Windows* devices, but the steps are pretty much the same for *MacOs/Linux*.
 
 Having **Blender** installed is a pre-requesite.

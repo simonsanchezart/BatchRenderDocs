@@ -35,7 +35,7 @@
             
   <div class="section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<p>This section explains how to actually use <strong>Batch Render</strong>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WJnKKgSqY08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>This section explains how to actually use <strong>Batch Render</strong>.</p>
 <p><strong>Batch Render</strong> is a <em>command line tool</em>, meaning that it’s completely operated via <strong>cmd/terminal</strong>.</p>
 <div class="section" id="basic-rendering">
 <h2>Basic Rendering<a class="headerlink" href="#basic-rendering" title="Permalink to this headline">¶</a></h2>
@@ -66,9 +66,9 @@
 <li><p><strong>Render width and height</strong>: Setting determines the dimensions of the render in pixels</p></li>
 <li><p><strong>Camera push in X</strong>: Offsep of the camera in the X axis, it’s suggested to use 0 unless you’re rendering a turntable</p></li>
 <li><p><strong>Camera push in Z</strong>: Offset of the camera in the Z axis, it’s not suggested for it to be 0, as part of the rendered object might end up outside of the camera’s vision</p></li>
-<li><p><strong>Displacement intensity</strong>: Defines the strength of the displacement map (height map), this setting is only relevant if the preset selected uses Cycles as it’s render engine, and if a height map is present.</p></li>
-<li><p><strong>Emission intensity</strong>: Defines the strength of the emissive map, only relevant if an emissive map is present.</p></li>
-<li><p><strong>Texture tile</strong>: Defines how many times all maps will be tiled in the X, Y and Z axis, options is mostly relevant when rendering UV Spheres with materials to avoid stretching.</p></li>
+<li><p><strong>Displacement intensity</strong>: Defines the strength of the displacement map (height map), this setting is only relevant if the preset selected uses Cycles as it’s render engine, and if a height map is present</p></li>
+<li><p><strong>Emission intensity</strong>: Defines the strength of the emissive map, only relevant if an emissive map is present</p></li>
+<li><p><strong>Texture tile</strong>: Defines how many times all maps will be tiled in the X, Y and Z axis, options is mostly relevant when rendering UV Spheres with materials to avoid stretching</p></li>
 </ul>
 </div>
 <div class="section" id="how-to-cancel">
@@ -77,7 +77,7 @@
 </div>
 <div class="section" id="material-matching">
 <h3>Material Matching<a class="headerlink" href="#material-matching" title="Permalink to this headline">¶</a></h3>
-<p><strong>Batch Render</strong> will automatically try to <em>create the materials for each object</em>. However, some <strong>requirements</strong> must be met.</p>
+<p><strong>Batch Render</strong> will automatically try to <em>assign the material maps to each material</em>. However, some <strong>requirements</strong> must be met.</p>
 <p>Each <strong>.obj</strong> or <strong>.fbx</strong> should have a folder named ‘<em>textures</em>’, inside this folder all the different maps for each material in the object should be located.</p>
 <p>The <strong>material matching depends on the name of each material</strong>, for example, let’s suppose we have an object with two materials:</p>
 <ol class="arabic simple">

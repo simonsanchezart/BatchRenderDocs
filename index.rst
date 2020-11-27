@@ -1,9 +1,9 @@
 Batch Render
 ========================================
 
-.. image:: batchLogoNoBG.png
-   :scale: 70%
-   :align: center
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vhU846f98" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Batch Render** is a *command line tool* that makes use of **Blender** to quickly render multiple objects from multiple angles.
 

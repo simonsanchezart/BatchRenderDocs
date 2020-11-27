@@ -1,6 +1,10 @@
 Batch Rename
 ============
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1UrmekP-2Dg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 **Batch Rename** is a tool included with **Batch Render** that allows you to *suffix and posfix* to the name of all the files in the current folder **from the terminal**.
 
 This can be useful in case you want to add the name of a material to all the maps in the current folder so the material is matched properly by **Batch Render**. And of course, it can also be used for other stuff outside *Batch Render*.
