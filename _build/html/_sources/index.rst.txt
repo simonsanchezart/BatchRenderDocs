@@ -1,6 +1,8 @@
 Batch Render
 ========================================
 
+`BlenderMarket <https://www.blendermarket.com/products/batch-render>`_ | `Gumroad <https://gumroad.com/l/LvoYp>`_ | `Artstation <https://www.artstation.com/marketplace/p/nNP3/batch-render-blender-addon>`_ | `Youtube <https://www.youtube.com/playlist?list=PLPum2xl4eAgJlF6xjMcZk5ckLAzcMHbgX>`_
+
 .. raw:: html
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vhU846f98" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
